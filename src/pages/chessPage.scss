@@ -1,0 +1,48 @@
+@import "../styles/variables.scss";
+
+.chess-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  height: 400vh;
+
+  color: $bg1;
+  background-color: $bg2;
+}
+
+.chess-page-section-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  background-color: $bg3;
+  color: $bg1;
+
+  video {
+    height: 50%;
+    width: 50%;
+    position: fixed;
+  }
+
+  img {
+    height: 50%;
+  }
+}
+
+.chess-page-section-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 500vh;
+  background-color: $bg2;
+  color: $bg1;
+
+  img {
+    height: 50%;
+  }
+}

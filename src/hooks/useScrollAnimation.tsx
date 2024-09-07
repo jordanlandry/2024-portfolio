@@ -30,35 +30,45 @@ export function useScrollAnimation({
   const [value, setValue] = useState<number | string>(startValue ?? 0);
 
   useEffect(() => {
+    let ticking = false;
+
     const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    const handleScroll = () => {
       if (!element?.current) return;
 
       const scroll = window.scrollY;
       const height = element.current.clientHeight;
       const offsetTop = element.current.offsetTop;
 
-      // Adjust start and end based on the offset percentage
-      const start = offsetTop - height * (1 + topOffset / 100);
-      const total = offsetTop + height * (1 - bottomOffset / 100);
-      const end = scrollTarget === "top" ? total : total - window.innerHeight;
+      const start = offsetTop - window.innerHeight * (topOffset / 100);
+      const end =
+        offsetTop + height - window.innerHeight * (bottomOffset / 100);
 
-      // Adjust for scrolling beyond the last keyframe
-      if (scroll < start) {
+      if (scroll <= start) {
         setValue(keyframes[0].from);
         return;
       }
 
-      if (scroll > end) {
+      if (scroll >= end) {
         setValue(keyframes[keyframes.length - 1].to);
         return;
       }
 
-      // Find the keyframe that is currently active
       let activeKeyframe: Keyframe | undefined;
       let nextKeyframe: Keyframe | undefined;
 
       for (let i = 0; i < keyframes.length; i++) {
         const keyframe = keyframes[i];
+
         const keyframeStart = start + ((end - start) * keyframe.start) / 100;
         const keyframeEnd =
           start +
@@ -69,6 +79,11 @@ export function useScrollAnimation({
           activeKeyframe = keyframe;
           nextKeyframe = keyframes[i + 1];
           break;
+        }
+
+        // If you pass the last keyframe, set the active keyframe to the last keyframe
+        if (i === keyframes.length - 1) {
+          activeKeyframe = keyframe;
         }
       }
 
@@ -84,20 +99,25 @@ export function useScrollAnimation({
         if (typeof from === "number" && typeof to === "number") {
           const progress =
             (scroll - keyframeStart) / (keyframeEnd - keyframeStart);
-          const clampedProgress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
+          const clampedProgress = Math.max(0, Math.min(1, progress));
           setValue(from + (to - from) * clampedProgress);
         } else {
-          setValue(to); // Directly set the value if it's a string
+          setValue(to);
         }
       }
     };
 
     window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("load", onScroll);
 
-    // Initial call to set value
-    onScroll();
+    onScroll(); // Initial call to set value
 
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("load", onScroll);
+    };
   }, [element, keyframes, scrollTarget, topOffset, bottomOffset, startValue]);
 
   return value;

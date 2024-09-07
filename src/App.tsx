@@ -2,18 +2,20 @@ import "./styles/App.scss";
 import AboutMe from "./sections/AboutMe";
 import ProjectSection from "./sections/ProjectSection";
 import WorkExperience from "./sections/WorkExperience";
-import ChessPage from "./pages/ChessPage";
+import ChessPage from "./pages/chessPage/ChessPage";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import GuitarHeroPage from "./pages/guitarHeroPage/GuitarHeroPage";
 
 function App() {
   return (
     <>
       <ErrorBoundary>
         {/* <AboutMe />
-      <WorkExperience />
-      <ProjectSection /> */}
+        <WorkExperience />
+        <ProjectSection /> */}
 
         <ChessPage />
+        {/* <GuitarHeroPage /> */}
       </ErrorBoundary>
     </>
   );

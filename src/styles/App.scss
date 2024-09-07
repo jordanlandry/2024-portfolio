@@ -30,3 +30,12 @@
   @include button($btn-primary, $btn-secondary, true);
 }
 
+.flex-ac {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,146 @@
+@import "../../styles/variables.scss";
+
+.chess-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 200vh;
+
+  color: $bg1;
+  background-color: $bg2;
+}
+
+.chess-page-developed-in-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 200vh;
+  background-color: $bg3;
+  color: $bg1;
+
+  video {
+    height: 50%;
+    width: 50%;
+    position: fixed;
+  }
+
+  img {
+    height: 50%;
+  }
+
+  .chess-page-developed-in-content {
+    z-index: 2;
+  }
+}
+
+.chess-page-developed-in-background {
+  position: absolute;
+  height: 200vh;
+  width: 100%;
+  background-color: $bg3;
+  z-index: 1;
+}
+
+.chess-page-time-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 100vh;
+  background-color: $bg2;
+  color: $bg1;
+
+  img {
+    height: 50%;
+  }
+}
+
+.chess-page-evaluation-section {
+  height: 125vh;
+  background-color: $bg3;
+  color: $bg1;
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  .chess-page-evaluation-title {
+    text-align: center;
+  }
+}
+
+.chess-page-evaluation-moves {
+  $transition-time: 0.4s;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  .chess-eval-move {
+    position: absolute;
+    left: 50%;
+
+    opacity: 0;
+    transition: $transition-time;
+
+    &.active {
+      opacity: 1;
+      animation: fadeIn $transition-time;
+    }
+
+    &.fade-out {
+      opacity: 0;
+      animation: fadeOut $transition-time;
+    }
+  }
+}
+
+.chess-page-evaluation-move-names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 10%;
+}
+
+.chess-page-opening-moves {
+  display: flex;
+  flex-direction: colui9mn;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  background-color: $bg2;
+  color: $bg1;
+
+  img {
+    height: 50%;
+  }
+}
+
+$fade-distance: 20px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY($fade-distance);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-$fade-distance);
+  }
+}

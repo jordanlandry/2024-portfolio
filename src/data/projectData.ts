@@ -11,6 +11,12 @@ export const projectData: ProjectType[] = [
     thumbnail: "./images/chess-thumbnail.png",
   },
   {
+    title: "Golf Simulator App",
+    description: "A golf simulator app created with React Native which connects to a game using Unity, through a server built in Flask Python.",
+    techStack: ["TypeScript", "React Native", "Unity-C#", "Flask-Python"],
+    thumbnail: '',
+  },
+  {
     title: "Guitar Hero Bot",
     description: "My portfolio website built with TypeScript and React.",
     techStack: ["Python", "C++"],

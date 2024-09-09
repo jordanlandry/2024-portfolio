@@ -152,6 +152,21 @@ export const CHESS_DEVELOPED_ANIMATIONS: { [key: string]: AnimationPropsMap } =
     },
   };
 
+export const CHESS_INFORMATION_ANIMS: { [key: string]: AnimationPropsMap } = {
+  contentAnims: {
+    opacity: {
+      scrollTarget: "bottom",
+      startValue: 0,
+      keyframes: [{ from: 0, to: 1, start: 0, end: 10 }],
+    },
+    left: {
+      scrollTarget: "bottom",
+      startValue: 100,
+      keyframes: [{ from: 100, to: -100, start: 10, end: 90 }],
+    },
+  },
+};
+
 // Static animations not tied to scrolling events
 export const CHESS_HEADER_IMAGE_ANIM = {
   from: 0,

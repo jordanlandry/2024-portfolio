@@ -5,6 +5,7 @@ import WorkExperience from "./sections/WorkExperience";
 import ChessPage from "./pages/chessPage/ChessPage";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import GuitarHeroPage from "./pages/guitarHeroPage/GuitarHeroPage";
+import RubiksCubePage from "./pages/rubiksCubePage/RubiksCubePage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
         <ChessPage />
         {/* <GuitarHeroPage /> */}
+        {/* <RubiksCubePage /> */}
       </ErrorBoundary>
     </>
   );

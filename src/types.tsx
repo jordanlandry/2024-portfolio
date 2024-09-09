@@ -20,6 +20,12 @@ export type WorkType = {
   linkedin?: string;
 }
 
+export type Information = {
+  title: string;
+  description: string;
+  thumbnail?: string;
+}
+
 export type RefType<T> = React.MutableRefObject<T>;
 
 type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N

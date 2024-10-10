@@ -5,7 +5,11 @@ export default function ProjectSection() {
   return (
     <>
       {projectData.map((project, index) => (
-        <div className="project" data-type={index % 2 === 0 ? 1 : 2}>
+        <div
+          key={project.title}
+          className="project"
+          data-type={index % 2 === 0 ? 1 : 2}
+        >
           <h2>{project.title}</h2>
           <p>{project.techStack.join(" / ")}</p>
           <div className="button-wrapper">
@@ -19,7 +23,7 @@ export default function ProjectSection() {
               </div>
             ) : null}
           </div>
-          
+
           <img src={project.thumbnail} alt={project.title} />
 
           {project.github ? (

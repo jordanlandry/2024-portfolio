@@ -6,16 +6,18 @@ import ChessPage from "./pages/chessPage/ChessPage";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import GuitarHeroPage from "./pages/guitarHeroPage/GuitarHeroPage";
 import RubiksCubePage from "./pages/rubiksCubePage/RubiksCubePage";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
       <ErrorBoundary>
-        {/* <AboutMe />
+        <Navbar />
+        <AboutMe />
         <WorkExperience />
-        <ProjectSection /> */}
+        <ProjectSection />
 
-        <ChessPage />
+        {/* <ChessPage /> */}
         {/* <GuitarHeroPage /> */}
         {/* <RubiksCubePage /> */}
       </ErrorBoundary>

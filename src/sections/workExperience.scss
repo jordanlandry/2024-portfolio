@@ -1,0 +1,75 @@
+@import "../styles/variables.scss";
+
+
+.work-experience-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+  margin-top: 2rem;
+
+  width: 75dvw;
+  max-width: 50rem;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.work-position {
+  font-style: italic;
+}
+
+.work-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.work-date-wrapper {
+  font-weight: 600;
+}
+
+.work-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.work-tech-stack-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+
+  .work-tech-item {
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    color: $btn-primary;
+    border: 1px solid $btn-primary;
+    background-color: white;
+  }
+}
+
+.work-linkedin {
+  color: $btn-primary;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+}

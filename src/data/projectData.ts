@@ -8,7 +8,7 @@ export const projectData: ProjectType[] = [
     techStack: ["TypeScript", "React"],
     github: "https://www.github.com/jordanlandry/chess-ai",
     demo: "https://jordanlandry.github.io/chess-ai",
-    thumbnail: "./images/chess-thumbnail.png",
+    thumbnail: "./images/chess/chess-thumbnail.png",
   },
   {
     title: "Golf Simulator App",

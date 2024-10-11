@@ -1,0 +1,52 @@
+@import "../styles/variables.scss";
+
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: $bg3;
+  opacity: 0.97;
+  backdrop-filter: saturate(180%) blur(200px);
+
+  color: $bg1;
+
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.navbar-item {
+  a {
+    color: $bg1;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $bg1;
+      color: $bg2;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

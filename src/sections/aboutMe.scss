@@ -10,54 +10,7 @@
   flex-direction: column;
 }
 
-#signature-firstname {
-  stroke-dasharray: 1820; /* Found from element.getTotalLength() */
-  stroke-dashoffset: 1820;
-  animation: draw 1s linear forwards;
-}
-
-#signature-lastname {
-  stroke-dasharray: 1842; /* Found from element.getTotalLength() */
-  stroke-dashoffset: 1842;
-  animation: draw 1s linear forwards;
-
-  animation-delay: 1s; /* Wait for previous anim to finish */
-}
-
-.name-title {
-  opacity: 0;
-  animation: fade-in 1s ease-in-out forwards;
-  animation-delay: 3s; /* Wait for previous anims to finish */
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.full-name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.name-wrapper {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  margin-bottom: 100vh;
-  font-size: 2.75rem;
-  top: 50%;
-  left: 50%;
-  z-index: 0;
-}
-
 .about-me-skill-wrapper {
-  // display: flex;
-  // justify-content: center;
-  // gap: 1rem;
-
   img {
     width: 3rem;
     height: 3rem;
@@ -74,36 +27,4 @@
   align-items: center;
 
   margin: 0 auto;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .name-wrapper {
-    font-size: 1.75rem;
-  }
-
-  .name-title {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .name-wrapper {
-    font-size: 1.25rem;
-  }
-
-  .name-title {
-    font-size: 1.7rem;
-  }
 }

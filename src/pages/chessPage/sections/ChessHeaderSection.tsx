@@ -22,7 +22,7 @@ export default function ChessHeaderSection() {
   return (
     <div className="chess-page-header" ref={headerRef}>
       <img
-        src="images/chess-thumbnail.png"
+        src="images/chess/chess-thumbnail.png"
         alt="chess thumbnail"
         style={{
           opacity:

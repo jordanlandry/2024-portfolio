@@ -30,3 +30,37 @@
   justify-content: center;
   gap: 20px;
 }
+
+.project-section-modal {
+  background-color: $bg1;
+  padding: 1rem;
+
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__projects {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__technology {
+    cursor: pointer;
+
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid $btn-primary;
+    color: $btn-primary;
+
+    &[data-active="true"] {
+      background-color: $btn-primary;
+      color: white;
+    }
+  }
+}

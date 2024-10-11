@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { projectData } from "../data/projectData";
 import "./projectSection.scss";
+import ProjectSectionModal from "./ProjectSectionModal";
 
 export default function ProjectSection() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
     <>
       {projectData.map((project, index) => (
@@ -13,9 +19,9 @@ export default function ProjectSection() {
           <h2>{project.title}</h2>
           <p>{project.techStack.join(" / ")}</p>
           <div className="button-wrapper">
-            <div className="primary-button">
-              <a href="/">Learn More</a>
-            </div>
+            <a className="primary-button" href={project.path}>
+              Learn More
+            </a>
 
             {project.demo ? (
               <div className="secondary-button">
@@ -35,6 +41,9 @@ export default function ProjectSection() {
           ) : null}
         </div>
       ))}
+
+      <button onClick={openModal}>View More Projects!</button>
+      <ProjectSectionModal open={modalOpen} onClose={closeModal} />
     </>
   );
 }

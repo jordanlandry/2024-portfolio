@@ -6,6 +6,7 @@ export type ProjectType = {
   demo?: string;
   demoText?: string;
   thumbnail: string;
+  path: string;
 };
 
 export type WorkType = {
@@ -19,22 +20,18 @@ export type WorkType = {
   linkedin?: string;
 };
 
-export type TechnologyType = {
-  name: string;
-  icon: string;
-  projects?: {
-    title: string;
-    description: string;
-    thumbnail: string;
-    screenshot: string;
-    github?: string;
-  }[];
-};
-
 export type Information = {
   title: string;
   description: string;
   thumbnail?: string;
+};
+
+export type AllProjectsType = {
+  title: string;
+  description: string;
+  techStack: string[];
+  github?: string;
+  demo?: string;
 };
 
 export type RefType<T> = React.MutableRefObject<T>;

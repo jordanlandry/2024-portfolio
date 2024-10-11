@@ -1,9 +1,4 @@
-import { useEffect, useState } from "react";
-import Link from "../components/Link";
-import Modal from "../components/Modal";
-import { technologyData } from "../data/technologyData";
 import "./aboutMe.scss";
-import useApi from "../hooks/useApi";
 
 const FullName = () => {
   return (
@@ -41,104 +36,20 @@ const FullName = () => {
   );
 };
 
-type Repo = { name: string; languages_url: string };
-const GITHUB_USERNAME = "jordanlandry";
-const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}`;
-
 export default function AboutMe() {
   const codingStartYear = 2016;
   const codingSince = new Date().getFullYear() - codingStartYear;
 
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
-
-  const [repos, setRepos] = useState<Repo[]>([]);
-
-  useApi<Repo[]>({
-    url: `${GITHUB_API_URL}/repos`,
-    callback: (data: Repo[]) => setRepos(data),
-    dependencies: [],
-  });
-
-  console.log(repos);
-
   return (
     <>
-      <div className="about-me-section">
-        <h1>About Me</h1>
+      <div className="about-me-section" id="about">
         <FullName />
+        <h1>About Me</h1>
         <div>
           I am a self-taught software developer with {codingSince}+ years of
-          experience.
-        </div>
-
-        <div className="technology-wrapper">
-          <h3>Technologies</h3>
-          <ul className="technology-list">
-            <li>
-              <img src="images/icons/react.svg" /> React
-            </li>
-            <li>
-              <img src="images/icons/angular.svg" /> Angular
-            </li>
-            <li>
-              <img src="images/icons/expo.svg" /> Expo / React Native
-            </li>
-            <li>
-              <img src="images/icons/typescript.svg" /> TypeScript
-            </li>
-          </ul>
-          <button className="primary-button" onClick={openModal}>
-            View All Technologies And Skills
-          </button>
+          experience. 
         </div>
       </div>
-
-      <Modal open={modalOpen} onClose={closeModal} className="technology-modal">
-        <div>
-          <h2 className="technology-modal-title text-center">
-            Technologies and Skills
-          </h2>
-
-          {/* {technologyData.map((tech) => (
-            <div key={tech.name} className="technology-data-wrapper">
-              <div className="technology-data-name-wrapper">
-                <h3>{tech.name}</h3>
-                <img src={tech.icon} alt={tech.name} />
-              </div>
-
-              <h4 className="text-center">Some Projects Using {tech.name}</h4>
-
-              <div className="technology-projects-container">
-                {tech.projects?.map((project) => (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={project.title}
-                    className="technology-project-wrapper"
-                  >
-                    <div className="technology-project-title-wrapper">
-                      <h5>{project.title}</h5>
-                      <img src={project.thumbnail} alt={project.title} />
-                    </div>
-
-                    <div>{project.description}</div>
-
-                    {project.github ? (
-                      <div>Click for more</div>
-                    ) : (
-                      <div>Source Code Not Available</div>
-                    )}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))} */}
-        </div>
-      </Modal>
     </>
   );
 }

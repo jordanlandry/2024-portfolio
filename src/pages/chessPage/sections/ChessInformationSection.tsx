@@ -1,48 +1,41 @@
-import { useRef } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { CHESS_INFORMATION } from "../chessInformation";
-import { getScrollAnimationObject } from "../../../hooks/useScrollAnimation";
-import { CHESS_INFORMATION_ANIMS } from "../chessPageAnims";
 
 export default function ChessInformationSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  const { contentAnims } = getScrollAnimationObject(
-    CHESS_INFORMATION_ANIMS,
-    sectionRef
-  );
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
 
   return (
-    <div
-      className="chess-page-information"
-      ref={sectionRef}
-      style={{ height: CHESS_INFORMATION.length * 100 + "vh" }}
-    >
-      <h1 className="chess-information-page-title">How It Works</h1>
-      <div
-        className="chess-information-content"
-        style={{
-          opacity: contentAnims.opacity,
-          width: CHESS_INFORMATION.length * 100 + "dvw",
-          left:
-            ((contentAnims.left as number) * CHESS_INFORMATION.length) / 2 +
-            "vw",
-          top: contentAnims.top,
-        }}
-      >
+    <div className="chess-page-information">
+      <h1 className="chess-information-page-title text-center">How It Works</h1>
+
+      <Carousel responsive={responsive} showDots>
         {CHESS_INFORMATION.map((info) => (
-          <div key={info.title} className="chess-information-box">
-            <h2 className="chess-information-title">{info.title}</h2>
+          <div key={info.title} className="chess-information-wrapper">
+            <h3 className="chess-information-title">{info.title}</h3>
             <p>{info.description}</p>
             {info.thumbnail && (
-              <img
-                src={info.thumbnail}
-                alt={info.title}
-                width={"50%"}
-              />
+              <img src={info.thumbnail} alt={info.title} width={"50%"} />
             )}
           </div>
         ))}
-      </div>
+      </Carousel>
     </div>
   );
 }

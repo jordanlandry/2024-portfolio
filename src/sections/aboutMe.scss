@@ -2,6 +2,12 @@
 
 .about-me-section {
   background-color: $bg1;
+  height: 100vh;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #signature-firstname {
@@ -47,50 +53,10 @@
   z-index: 0;
 }
 
-.technology-modal {
-  background-color: white;
-
-  width: 80vw;
-  max-width: 75rem;
-}
-
-.technology-data-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-
-  align-items: center;
-}
-
-.technology-projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.technology-project-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  border: 1px solid $btn-primary;
-  color: $btn-primary;
-  padding: 1rem;
-
-  border-radius: 1rem;
-
-  transition: transform 0.3s;
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
-
-.technology-data-name-wrapper,
-.technology-project-title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.about-me-skill-wrapper {
+  // display: flex;
+  // justify-content: center;
+  // gap: 1rem;
 
   img {
     width: 3rem;
@@ -98,33 +64,16 @@
   }
 }
 
-.name-title {
-  font-size: 2.75rem;
-  text-align: center;
-}
-
-.technology-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  margin: auto;
-}
-
-.technology-list {
-  display: flex;
-  flex-direction: column;
+.about-me-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
+  max-width: 800px;
 
-  li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
 
-    img {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
+  margin: 0 auto;
 }
 
 @keyframes fade-in {

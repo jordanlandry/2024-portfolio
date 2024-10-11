@@ -127,23 +127,40 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 
   height: 100vh;
   background-color: $bg2;
   color: $bg1;
 
   img {
+    z-index: 1000; // Make sure the image is on top of any hidden elements
     height: 50%;
   }
+}
+
+.chess-information-wrapper {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+  margin: auto;
+  text-align: center;
 }
 
 .chess-page-information {
   background-color: $bg2;
   color: $bg1;
-  height: 500vh;
+  height: 100vh;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
   .chess-information-page-title {
-    text-align: center;  
+    text-align: center;
     padding-top: 2rem;
   }
 

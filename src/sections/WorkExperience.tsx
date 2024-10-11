@@ -5,7 +5,7 @@ import "./workExperience.scss";
 
 export default function WorkExperience() {
   return (
-    <>
+    <div id="work">
       <h2 className="work-experience-title">Work Experience</h2>
       {workData.map((work, _index) => {
         return (
@@ -47,6 +47,6 @@ export default function WorkExperience() {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }

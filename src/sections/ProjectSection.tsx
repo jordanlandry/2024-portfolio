@@ -9,7 +9,7 @@ export default function ProjectSection() {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <>
+    <div id="projects">
       {projectData.map((project, index) => (
         <div
           key={project.title}
@@ -44,6 +44,6 @@ export default function ProjectSection() {
 
       <button onClick={openModal}>View More Projects!</button>
       <ProjectSectionModal open={modalOpen} onClose={closeModal} />
-    </>
+    </div>
   );
 }

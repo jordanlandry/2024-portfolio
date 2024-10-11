@@ -42,7 +42,7 @@ export default function AboutMe() {
 
   return (
     <>
-      <div className="about-me-section">
+      <div className="about-me-section" id="about">
         <FullName />
         <h1>About Me</h1>
         <div>

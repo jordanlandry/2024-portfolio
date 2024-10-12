@@ -5,7 +5,8 @@ const ALL_EVENTS = ["resize", "load", "scroll"] as const;
 type EventType = (typeof ALL_EVENTS)[number];
 
 type Props = {
-  elementRef: RefType<HTMLElement | null>;
+  elementRef: RefType<HTMLElement | null> ;
+  elementRefs?: undefined;
   events?: EventType[];
 };
 
@@ -25,7 +26,7 @@ export default function useBoundingClientRect({
     updateRect();
 
     events.forEach((event) => window.addEventListener(event, updateRect));
-    
+
     return () => {
       events.forEach((event) => window.removeEventListener(event, updateRect));
     };

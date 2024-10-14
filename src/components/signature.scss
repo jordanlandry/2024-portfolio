@@ -4,38 +4,6 @@
   }
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .name-wrapper {
-    font-size: 1.75rem;
-  }
-
-  .name-title {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .name-wrapper {
-    font-size: 1.25rem;
-  }
-
-  .name-title {
-    font-size: 1.7rem;
-  }
-}
-
 #signature-firstname {
   stroke-dasharray: 1820; /* Found from element.getTotalLength() */
   stroke-dashoffset: 1820;
@@ -50,25 +18,8 @@
   animation-delay: 1s; /* Wait for previous anim to finish */
 }
 
-.name-title {
-  opacity: 0;
-  animation: fade-in 1s ease-in-out forwards;
-  animation-delay: 3s; /* Wait for previous anims to finish */
-}
-
 .full-name {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.name-wrapper {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  margin-bottom: 100vh;
-  font-size: 2.75rem;
-  top: 50%;
-  left: 50%;
-  z-index: 0;
 }

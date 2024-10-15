@@ -1,7 +1,7 @@
 @import '../styles/variables.scss';
 
 .home-section {
-  height: 100vh;
+  height: calc(100vh);
   display: flex;
   justify-content: center;
   align-items: center;

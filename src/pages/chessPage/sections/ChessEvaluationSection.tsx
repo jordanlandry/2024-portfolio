@@ -31,12 +31,11 @@ export default function ChessEvaluationSection() {
           src="videos/chess/eval-bar.mp4"
           autoPlay
           loop
-          style={{ maxHeight: "80vh" }}
         ></video>
 
         <div className="chess-page-evaluation-move-names">
           {evalMoves.map((move, index) => (
-            <h1
+            <div
               key={move.name}
               onClick={() => setActiveEvalMove(index)}
               style={{ color: move.color }}
@@ -47,7 +46,7 @@ export default function ChessEvaluationSection() {
               }
             >
               {move.name}
-            </h1>
+            </div>
           ))}
         </div>
       </div>

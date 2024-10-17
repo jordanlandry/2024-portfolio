@@ -25,7 +25,7 @@ export default function ChessInformationSection() {
     <div className="chess-page-information">
       <h1 className="chess-information-page-title text-center">How It Works</h1>
 
-      <Carousel responsive={responsive} showDots>
+      <Carousel responsive={responsive}>
         {CHESS_INFORMATION.map((info) => (
           <div key={info.title} className="chess-information-wrapper">
             <h3 className="chess-information-title">{info.title}</h3>
